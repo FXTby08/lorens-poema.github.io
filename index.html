@@ -7,12 +7,13 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background: url("imagenes/fondo2.jpg") no-repeat center center fixed; /* Fondo con imagen */
+            background: url("fondo del menu2.webp") no-repeat center center fixed; /* Fondo con imagen */
             background-size: cover; /* La imagen cubre toda la pantalla */
             color: rgba(0, 110, 255, 0.788);
             margin: 0;
             padding: 0;
             overflow: hidden; /* Evita que el scroll se active */
+            position: relative;
         }
         h1 {
             text-align: center;
@@ -20,11 +21,49 @@
             position: relative;
             z-index: 10;
         }
+
+        /* Animación de corazones en picada */
+        .heart {
+            position: absolute;
+            top: -50px; /* Empieza fuera de la pantalla */
+            width: 30px;
+            height: 30px;
+            background-color: rgba(0, 162, 255, 0.7); /* Azul con transparencia */
+            clip-path: polygon(50% 0%, 0% 100%, 100% 100%); /* Forma de corazón */
+            animation: fall 5s infinite linear;
+            opacity: 0.7;
+        }
+
+        @keyframes fall {
+            0% {
+                top: -50px;
+                opacity: 0.7;
+                transform: scale(0.7);
+            }
+            100% {
+                top: 100vh;
+                opacity: 0.4;
+                transform: scale(1.2);
+            }
+        }
+
+        /* Variar la posición y la velocidad de los corazones */
+        .heart:nth-child(1) { left: 10%; animation-duration: 6s; }
+        .heart:nth-child(2) { left: 20%; animation-duration: 4s; }
+        .heart:nth-child(3) { left: 30%; animation-duration: 5s; }
+        .heart:nth-child(4) { left: 40%; animation-duration: 6s; }
+        .heart:nth-child(5) { left: 50%; animation-duration: 7s; }
+        .heart:nth-child(6) { left: 60%; animation-duration: 5s; }
+        .heart:nth-child(7) { left: 70%; animation-duration: 6s; }
+        .heart:nth-child(8) { left: 80%; animation-duration: 7s; }
+        .heart:nth-child(9) { left: 90%; animation-duration: 4s; }
+
         .gallery {
             position: relative;
             width: 100vw;
             height: 100vh;
         }
+
         .photo {
             position: absolute;
             width: 150px;
@@ -33,16 +72,33 @@
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
             transform: rotate(calc(-5deg + 10deg * random())); /* Gira de forma aleatoria */
             transition: transform 0.3s ease, z-index 0.3s;
+            animation: floatImage 2s ease-out infinite;
         }
+
+        /* Animación de imágenes flotando */
+        @keyframes floatImage {
+            0% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
         .photo:hover {
             transform: scale(1.2) rotate(0deg); /* Aumenta de tamaño y se endereza */
             z-index: 100; /* Se pone encima de las demás */
         }
+
         .photo img {
             width: 100%;
             height: auto;
             display: block;
         }
+
         /* Coloca las imágenes en posiciones aleatorias */
         .photo:nth-child(1) { top: 10%; left: 20%; }
         .photo:nth-child(2) { top: 30%; left: 50%; }
@@ -52,28 +108,40 @@
     </style>
 </head>
 <body>
-    <!-- Reproduce la canción automáticamente (fallback si funciona el autoplay) -->
+    <!-- Corazones cayendo (animación) -->
+    <div class="heart"></div>
+    <div class="heart"></div>
+    <div class="heart"></div>
+    <div class="heart"></div>
+    <div class="heart"></div>
+    <div class="heart"></div>
+    <div class="heart"></div>
+    <div class="heart"></div>
+    <div class="heart"></div>
+
+    <!-- Música en autoplay -->
     <audio id="background-music" loop>
-        <source src="musica/penyair.mp3" type="audio/mpeg">
+        <source src="penyair.mp3" type="audio/mpeg">
         Tu navegador no soporta audio HTML5.
     </audio>
 
-    <h1>Poemas para ti loren's</h1>
+    <h1>Poemas para ti Loren's</h1>
+
     <div class="gallery">
         <div class="photo" onclick="window.location.href='momento1.html'">
-            <img src="../te amo/imagenes/moment1.jpg" alt="Momento 1">
+            <img src="moment1.jpg" alt="Momento 1">
         </div>
         <div class="photo" onclick="window.location.href='momento2.html'">
-            <img src="../te amo/imagenes/moment2.jpg" alt="Momento 2">
+            <img src="moment2.jpg" alt="Momento 2">
         </div>
         <div class="photo" onclick="window.location.href='momento3.html'">
-            <img src="../te amo/imagenes/moment3.jpg" alt="Momento 3">
+            <img src="moment3.jpg" alt="Momento 3">
         </div>
         <div class="photo" onclick="window.location.href='momento4.html'">
-            <img src="../te amo/imagenes/moment4.jpg" alt="Momento 4">
+            <img src="moment4.jpg" alt="Momento 4">
         </div>
         <div class="photo" onclick="window.location.href='momento5.html'">
-            <img src="../te amo/imagenes/moment5.jpg" alt="Momento 5">
+            <img src="moment5.jpg" alt="Momento 5">
         </div>
     </div>
 
@@ -91,3 +159,4 @@
     </script>
 </body>
 </html>
+
