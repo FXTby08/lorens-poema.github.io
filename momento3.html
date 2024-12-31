@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poema N°3 - poemas para ti, Loren's</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url("imagenes/paisaje\ 4.avif") no-repeat center center fixed; /* Fondo con imagen */
+            background-size: cover;
+            color: white;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        .poem-container {
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+            max-width: 600px;
+        }
+        .poem-container h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .poem-container p {
+            font-size: 18px;
+            line-height: 1.5;
+            text-align: justify;
+        }
+    </style>
+</head>
+<body>
+    <!-- Música de fondo -->
+    <audio id="background-music" loop>
+        <source src="musica/penyair.mp3" type="audio/mpeg">
+        Tu navegador no soporta audio HTML5.
+    </audio>
+
+    <div class="poem-container">
+        <h1>Nuestro rincón</h1>
+        <p>
+            En tu abrazo encuentro el hogar,<br>
+            un rincón donde el mundo se detiene.<br>
+            No importa la distancia, el tiempo o el mar,<br>
+            porque en tu ser, todo mi amor se mantiene.<br><br>
+
+            Tus palabras son el eco de mi corazón,<br>
+            y cada susurro tuyo, mi refugio y razón.<br>
+            Te amo más allá de lo que puedo decir,<br>
+            en cada latido, te vuelvo a elegir.
+        </p>
+    </div>
+
+    <script>
+        const audio = document.getElementById('background-music');
+        audio.play().catch(() => {
+            document.body.addEventListener('click', function () {
+                audio.play();
+            }, { once: true });
+        });
+    </script>
+</body>
+</html>

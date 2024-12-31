@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poema N°5 - poemas para ti, Loren's</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url("imagenes/paisaje\ 6.avif") no-repeat center center fixed;
+            background-size: cover;
+            color: rgb(1, 120, 255);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        .poem-container {
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+            max-width: 600px;
+        }
+        .poem-container h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .poem-container p {
+            font-size: 18px;
+            line-height: 1.5;
+            text-align: justify;
+        }
+    </style>
+</head>
+<body>
+    <!-- Música de fondo -->
+    <audio id="background-music" loop>
+        <source src="musica/penyair.mp3" type="audio/mpeg">
+        Tu navegador no soporta audio HTML5.
+    </audio>
+
+    <div class="poem-container">
+        <h1>La magia de tu ser</h1>
+        <p>
+            Tus ojos son dos espejos de un universo,<br>
+            donde me pierdo y me encuentro sin querer.<br>
+            En tu risa se esconde la magia del día,<br>
+            y en tu alma, el amor que siempre quiero ver.<br><br>
+
+            Cada momento a tu lado es un hechizo,<br>
+            un dulce susurro que mi corazón guarda.<br>
+            Eres la magia que ilumina mi vida,<br>
+            y la razón por la que mi alma siempre se guarda.
+        </p>
+    </div>
+
+    <script>
+        const audio = document.getElementById('background-music');
+        audio.play().catch(() => {
+            document.body.addEventListener('click', function () {
+                audio.play();
+            }, { once: true });
+        });
+    </script>
+</body>
+</html>

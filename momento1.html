@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poema N°1 - poemas para ti, Loren's</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url("imagenes/paisaje\ 2.avif") no-repeat center center fixed; /* Fondo con imagen */
+            background-size: cover; /* La imagen cubre toda la pantalla */
+            color: rgb(255, 0, 0);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh; /* Asegura que el contenido esté centrado */
+        }
+        .poem-container {
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.6); /* Fondo semitransparente */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+            max-width: 600px;
+        }
+        .poem-container h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .poem-container p {
+            font-size: 18px;
+            line-height: 1.5;
+            text-align: justify;
+        }
+    </style>
+</head>
+<body>
+    <!-- Música de fondo -->
+    <audio id="background-music" loop>
+        <source src="musica/penyair.mp3" type="audio/mpeg">
+        Tu navegador no soporta audio HTML5.
+    </audio>
+
+    <div class="poem-container">
+        <h1>Entre palabras y silencios</h1>
+        <p>
+            Lorens, tu nombre vuela en mi mente,<br>
+            como una canción que no sé terminar,<br>
+            un susurro que se pierde en el viento,<br>
+            pero que aquí dentro nunca deja de hablar.<br><br>
+
+            Quisiera decirte, pero las palabras se rompen,<br>
+            como olas que no logran tocar la orilla.<br>
+            ¿Qué si me acerco y me pierdo en tu mirada?<br>
+            ¿O si mi voz tiembla y todo se vuelve sombrilla?<br><br>
+
+            Te veo y el mundo se detiene un segundo,<br>
+            pero el miedo lo empuja a girar de nuevo,<br>
+            ¿Y si descubres mi torpe verdad?<br>
+            Que entre mis silencios, mi corazón te escribía un te quiero.<br><br>
+
+            No sé si soy poeta, no sé si esto tiene sentido,<br>
+            solo sé que al verte, el caos toma forma,<br>
+            y mi pecho late como queriendo decir:<br>
+            "Ella es la calma que mi alma adorna".<br><br>
+
+            Lorens, no sé cómo explicarlo,<br>
+            ni si algún día entenderé este enredo,<br>
+            pero entre palabras torpes y sueños callados,<br>
+            tú eres el poema que nunca puedo leer entero.
+        </p>
+    </div>
+
+    <script>
+        // Solución para navegadores que bloquean autoplay
+        const audio = document.getElementById('background-music');
+
+        // Intenta reproducir automáticamente
+        audio.play().catch(() => {
+            // Si el autoplay falla, espera interacción del usuario
+            document.body.addEventListener('click', function () {
+                audio.play();
+            }, { once: true }); // Solo escucha el primer clic
+        });
+    </script>
+</body>
+</html>

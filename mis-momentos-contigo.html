@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poemas para ti, Loren's</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url("imagenes/fondo2.jpg") no-repeat center center fixed; /* Fondo con imagen */
+            background-size: cover; /* La imagen cubre toda la pantalla */
+            color: rgba(0, 110, 255, 0.788);
+            margin: 0;
+            padding: 0;
+            overflow: hidden; /* Evita que el scroll se active */
+        }
+        h1 {
+            text-align: center;
+            margin: 20px;
+            position: relative;
+            z-index: 10;
+        }
+        .gallery {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+        }
+        .photo {
+            position: absolute;
+            width: 150px;
+            border: 5px solid rgb(0, 162, 255);
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+            transform: rotate(calc(-5deg + 10deg * random())); /* Gira de forma aleatoria */
+            transition: transform 0.3s ease, z-index 0.3s;
+        }
+        .photo:hover {
+            transform: scale(1.2) rotate(0deg); /* Aumenta de tamaño y se endereza */
+            z-index: 100; /* Se pone encima de las demás */
+        }
+        .photo img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        /* Coloca las imágenes en posiciones aleatorias */
+        .photo:nth-child(1) { top: 10%; left: 20%; }
+        .photo:nth-child(2) { top: 30%; left: 50%; }
+        .photo:nth-child(3) { top: 60%; left: 10%; }
+        .photo:nth-child(4) { top: 50%; left: 70%; }
+        .photo:nth-child(5) { top: 20%; left: 80%; }
+    </style>
+</head>
+<body>
+    <!-- Reproduce la canción automáticamente (fallback si funciona el autoplay) -->
+    <audio id="background-music" loop>
+        <source src="musica/penyair.mp3" type="audio/mpeg">
+        Tu navegador no soporta audio HTML5.
+    </audio>
+
+    <h1>Poemas para ti loren's</h1>
+    <div class="gallery">
+        <div class="photo" onclick="window.location.href='momento1.html'">
+            <img src="../te amo/imagenes/moment1.jpg" alt="Momento 1">
+        </div>
+        <div class="photo" onclick="window.location.href='momento2.html'">
+            <img src="../te amo/imagenes/moment2.jpg" alt="Momento 2">
+        </div>
+        <div class="photo" onclick="window.location.href='momento3.html'">
+            <img src="../te amo/imagenes/moment3.jpg" alt="Momento 3">
+        </div>
+        <div class="photo" onclick="window.location.href='momento4.html'">
+            <img src="../te amo/imagenes/moment4.jpg" alt="Momento 4">
+        </div>
+        <div class="photo" onclick="window.location.href='momento5.html'">
+            <img src="../te amo/imagenes/moment5.jpg" alt="Momento 5">
+        </div>
+    </div>
+
+    <script>
+        // Solución para navegadores que bloquean autoplay
+        const audio = document.getElementById('background-music');
+
+        // Intenta reproducir automáticamente
+        audio.play().catch(() => {
+            // Si el autoplay falla, espera interacción del usuario
+            document.body.addEventListener('click', function () {
+                audio.play();
+            }, { once: true }); // Solo escucha el primer clic
+        });
+    </script>
+</body>
+</html>

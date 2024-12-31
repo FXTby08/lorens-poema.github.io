@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poema N°2 - poemas para ti, Loren's</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url("imagenes/paisaje\ 3.avif") no-repeat center center fixed; /* Fondo con imagen */
+            background-size: cover; /* La imagen cubre toda la pantalla */
+            color: rgb(0, 0, 0);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh; /* Asegura que el contenido esté centrado */
+        }
+        .poem-container {
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.6); /* Fondo semitransparente */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(255, 255, 255, 0.5);
+            max-width: 600px;
+        }
+        .poem-container h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .poem-container p {
+            font-size: 18px;
+            line-height: 1.5;
+            text-align: justify;
+        }
+    </style>
+</head>
+<body>
+    <!-- Música de fondo -->
+    <audio id="background-music" loop>
+        <source src="musica/penyair.mp3" type="audio/mpeg">
+        Tu navegador no soporta audio HTML5.
+    </audio>
+
+    <div class="poem-container">
+        <h1>Eres mi luz</h1>
+        <p>
+            Eres mi sol, mi luna y mi estrella,<br>
+            la razón por la que el cielo se pinta de azul.<br>
+            En tu mirada se esconde mi calma,<br>
+            y en tu sonrisa, mi paz, mi luz.<br><br>
+
+            En cada paso que das, florecen los días,<br>
+            y en tu voz, la melodía que el viento trae.<br>
+            Eres la fuente de mi inspiración,<br>
+            la poesía que mi alma nunca deja de cantar.
+        </p>
+    </div>
+
+    <script>
+        const audio = document.getElementById('background-music');
+        audio.play().catch(() => {
+            document.body.addEventListener('click', function () {
+                audio.play();
+            }, { once: true });
+        });
+    </script>
+</body>
+</html>
